@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Data Lovers</title>
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <input type="checkbox" id="btnMenu">
+    <label for="btnMenu">&#9776;</label>
+
+    <section class="menu">
+      <ul>
+        <li><span>Ordenar <i class="fas fa-angle-down"></i></span>
+          <ul class="subMenu hide">
+            <li id="orderAZ">A-Z <i class="fas fa-sort-alpha-down"></i></li i>
+            <li id="orderZA">Z-A <i class="fas fa-sort-alpha-up-alt"></i></li>
+          </ul>
+        </li>
+        <li><span>Max-CP <i class="fas fa-angle-down"></i></span>
+          <ul class="subMenu hide">
+            <li id="ascMaxCP">Asc <i class="fas fa-sort-numeric-down"></i></li>
+            <li id="desMaxCP">Desc <i class="fas fa-sort-numeric-up-alt"></i></li>
+          </ul>
+        </li>
+        <li><span>Tipo <i class="fas fa-angle-down"></i></span>
+          <ul class="type subMenu hide">
+            <li>Bug</li>
+            <li>Dark</li>
+            <li>Dragon</li>
+            <li>Electric</li>
+            <li>Fairy</li>
+            <li>Fighting</li>
+            <li>Fire</li>
+            <li>Flying</li>
+            <li>Ghost</li>
+            <li>Grass</li>
+            <li>Ground</li>
+            <li>Ice</li>
+            <li>Normal</li>
+            <li>Poison</li>
+            <li>Psychic</li>
+            <li>Rock</li>
+            <li>Steel</li>
+            <li>Water</li>
+          </ul>
+        </li>
+        <li><span>% Huída <i class="fas fa-angle-down"></i></span>
+          <ul class="subMenu hide">
+            <li id="low">Bajo</li>
+            <li id="medium">Medio</li>
+            <li id="high">Alto</li>
+            <li id="notInCapture">No en captura</li>
+          </ul>
+        </li>
+        <li><span>% Aparición <i class="fas fa-angle-down"></i></span>
+          <ul class="subMenu hide">
+            <li id="nulo">Nulo</li>
+            <li id="lowSpawn">Bajo</li>
+            <li id="mediumSpawn">Medio</li>
+            <li id="highSpawn">Alto</li>
+          </ul>
+        </li>
+        <li><span>Región <i class="fas fa-angle-down"></i></span>
+          <ul class="subMenu hide">
+            <li id="kanto">Kanto</li>
+            <li id="jhoto">Jhoto</li>
+          </ul>
+        </li>
+      </ul>
+
+    </section>
+    <div id="searchBox" class="searchBox">
+      <i class="fas fa-search searchIcon" id="searchToggle"></i>
+      <input type="text" id="searchPkm" class="search" placeholder="Buscar ej. Bulbasaur">
+    </div>
+
+  </header>
+
+  <main>
+    <section class="logoSlogan">
+      <img src="./img/pgo_logo.png" alt="Pokémon Go logo">
+      <h1>¡Explora, descubre, colecciona!</h1>
+    </section>
+
+    <section id="dataContainer" class="dataContainer">
+    </section>
+
+    <section id="infoBox" class="infoBox">
+      <p class="pokeNumber num">044</p>
+      <div class="infoWindow">
+        <img src="https://www.serebii.net/pokemongo/pokemon/044.png" alt="Pokémon" class="pokeImgInfo">
+        <h4>GLOOM</h4>
+        <p>Gloom releases a foul fragrance from the pistil of its
+          flower. When faced with danger, the stench worsens. If
+          this Pokémon is feeling calm and secure, it does not
+          release its usual stinky aroma.</p>
+
+        <table>
+          <tr>
+            <td>TIPO</td>
+            <td>REGIÓN</td>
+            <td>RAREZA</td>
+          </tr>
+          <tr>
+            <td>Agua</td>
+            <td>Kanto</td>
+            <td>Normal</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>% HUÍDA</td>
+            <td>% CAPTURA</td>
+            <td>% APARICIÓN</td>
+          </tr>
+          <tr>
+            <td>10%</td>
+            <td>20%</td>
+            <td>6.9%</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>ALTURA</td>
+            <td>PESO</td>
+            <td>RESISTENCIA</td>
+            <td>DEBILIDAD</td>
+          </tr>
+          <tr>
+            <td>0.71cm</td>
+            <td>6.9kg</td>
+            <td>water, electric, grass, fighting, fairy.</td>
+            <td>water, electric, grass, fighting, fairy.</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>Atack</td>
+            <td>STAB</td>
+            <td>DPS</td>
+            <td>EPS</td>
+          </tr>
+          <tr>
+            <td>petal blizzard</td>
+            <td>123</td>
+            <td>234</td>
+            <td>456</td>
+          </tr>
+          <tr>
+            <td>sludge bomb</td>
+            <td>123</td>
+            <td>234</td>
+            <td>456</td>
+          </tr>
+          <tr>
+            <td>moonblast</td>
+            <td>123</td>
+            <td>234</td>
+            <td>456</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+  </main>
+  <footer class="footerStyle">
+    <section class="rrss">
+      <a href="https://es-la.facebook.com/PokemonGO/" target="_blank" class="rrssLogo"><i
+          class="fab fa-facebook-square"></i></a>
+      <a href="https://twitter.com/pokemongoapp?lang=es" target="_blank" class="rrssLogo"><i
+          class="fab fa-twitter-square"></i></a>
+      <a href="https://www.instagram.com/pokemongoapp/?hl=es-la" target="_blank" class="rrssLogo"><i
+          class="fab fa-instagram-square"></i></a>
+    </section>
+    <section class="GeneralInformation">
+      <a href="https://pokemongolive.com/es/" target="_blank" class="information">Más Información</a>
+      <a href="https://pokemongolive.com/es/events/community-day/americas/" target="_blank"
+        class="information">Comunidad</a>
+    </section>
+
+    <section class="copyright">
+      <p class="authors"> © 2020 Argie Rincón </p>
+    </section>
+  </footer>
+  <script src="main.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/7e57db430e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,689 @@
+﻿* {
+  margin: 0;
+  font-family: dosis, sans-serif;
+}
+
+.hide {
+  display: none !important;
+}
+
+@font-face {
+  font-family: dosis;
+  src: url(./fonts/Dosis-VariableFont_wght.ttf);
+}
+
+body {
+  background-image: url(./img/pkmgo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+header {
+  width: 100%;
+  background-color: #378B7D;
+  background: linear-gradient(to right, #639d25, #427768);
+  position: fixed;
+  z-index: 1;
+}
+
+#btnMenu {
+  display: none;
+}
+
+header label {
+  display: none;
+  height: 20px;
+  width: 16px;
+  padding: 10px 15px 18px;
+  border-right: 1px solid rgba(245, 245, 245, 0.6);
+  color: #F5F5F5;
+  font-size: 20px;
+}
+
+header label:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.menu {
+  width: 60%;
+}
+
+.menu ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.menu>ul>li>ul {
+  background-color: #378B7D;
+  background: linear-gradient(to right, #639d25, #427768);
+}
+
+.subMenu {
+  display: block;
+  color: #F5F5F5;
+  text-align: center;
+}
+
+.type {
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.type::-webkit-scrollbar {
+  width: 12px;
+  /* Tamaño del scroll en vertical */
+}
+
+.type::-webkit-scrollbar-thumb {
+  background: rgb(138, 136, 136);
+  border-radius: 4px;
+}
+
+.type::-webkit-scrollbar-thumb:hover {
+  background: rgb(95, 94, 94);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.type::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+.type::-webkit-scrollbar-track:hover,
+.type::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+.subMenu li {
+  border-top: none !important;
+}
+
+/* .menu ul ul {
+  display: none;
+}
+.menu li {
+  border-right: 1PX SOLID #F5F5F5;
+} */
+
+.menu li:hover {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.menu li span {
+  display: block;
+  padding: 20px 0px;
+  color: #F5F5F5;
+  text-align: center;
+}
+
+.menu li i {
+  margin-left: 10px;
+}
+
+/* IMPORTANTE
+.menu ul li:hover ul {
+  display: block;
+  position: absolute;
+}
+.menu ul li:hover ul {
+  display: none;
+} */
+
+.search:active {
+  outline: none;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.searchBox {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid #554f4f;
+  box-sizing: border-box;
+  border-radius: 30px;
+  /* background: linear-gradient(to right, #24CCAA, #A2DB95); */
+  box-shadow: 0px 4px 12px rgba(136, 18, 56, 0.15);
+  /* border-radius: 6px; */
+  cursor: pointer;
+  transition: 250ms ease;
+  margin: 7px;
+}
+
+.searchBox input {
+  padding: 12px 4px 8px;
+  font-size: 18px;
+  color: rgb(56, 49, 49);
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  font-family: Roboto, sans-serif;
+  left: 45px;
+  top: 0;
+  transition: 250ms ease;
+  width: 0px;
+}
+
+.searchBox:hover {
+  /* background: rgba(93, 91, 91, 0.3); */
+  background: linear-gradient(to right, #24CCAA, #A2DB95);
+  box-shadow: 0px 4px 12px rgba(168, 31, 74, 0.2);
+  border-radius: 30px;
+}
+
+.searchBox i {
+  position: absolute;
+  top: 21%;
+  left: 9px;
+  font-size: 25px;
+  color: rgb(56, 49, 49);
+  transition: 250ms ease;
+  transform: rotateY(-50%);
+}
+
+.searchBox-opened {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border: 2px solid #554f4f !important;
+  box-sizing: border-box !important;
+  border-radius: 30px !important;
+  /* background: linear-gradient(to right, #24CCAA, #A2DB95) !important; */
+  box-shadow: 0px 4px 12px rgba(168, 31, 74, 0.2) !important;
+  /* border-radius: 6px !important; */
+  width: 290px !important;
+}
+
+.searchBox-opened input {
+  width: 230px;
+}
+
+.searchBox-opened i {
+  top: 32%;
+  left: 15px;
+  font-size: 20px;
+  transform: rotateY(-50%);
+}
+
+::placeholder {
+  font-family: Dosis, sans-serif;
+}
+
+.logoSlogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5%;
+}
+
+.logoSlogan img {
+  width: 20%;
+  margin: 4% 0% 0%;
+}
+
+.logoSlogan h1 {
+  margin: 2% 0%;
+}
+
+.dataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+
+.container {
+  height: 160px;
+  width: 144px;
+  -webkit-perspective: 700;
+  margin: 3%;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relrelative;
+  transform-style: preserve-3d;
+  transition: 1.5s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.side {
+  width: 100%;
+  height: 100%;
+  backface-visibility: inherit;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.pokeImgName {
+  object-fit: cover;
+  background-color: #F2F2F2;
+  width: 144px;
+  height: 130px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.pokeNumber {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%), #FBFE50;
+  border: 1px solid #554F4F;
+  box-sizing: border-box;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 4px;
+  position: absolute;
+  font-weight: bold;
+}
+
+.pokeImg {
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+}
+
+.pokeName {
+  font-weight: bolder;
+  text-transform: uppercase
+}
+
+.pokeInfo {
+  /* background: linear-gradient(180deg, #6A81F8 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #61CEE5 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 100%), #50EA56; */
+  background-image: url(./img/back-card.png);
+  width: 134px;
+  height: 130px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+  padding-top: 20px;
+  padding-left: 10px;
+  color: white;
+}
+
+.pokeInfo p span {
+  font-weight: bold;
+}
+
+.errorMessage {
+  display: block;
+  padding: 20px;
+  border: 3px solid rgb(235, 54, 22);
+  border-radius: 15px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.message {
+  font-family: sans-serif, "Nanum Gothic";
+  color: rgb(235, 54, 22);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footerStyle {
+  background-color: #378B7D;
+  background: linear-gradient(to right, #639d25, #427768);
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rrss {
+  width: 15%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rrssLogo {
+  color: #F5F5F5;
+  font-size: 40px;
+}
+
+.GeneralInformation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 33%;
+  justify-content: space-evenly;
+}
+
+.GeneralInformation>a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #F5F5F5;
+}
+
+.copyright {
+  width: 15%;
+}
+
+.authors {
+  font-size: 20px;
+  color: #F5F5F5;
+}
+
+/* CLASES PARA LA FUTURA MODAL */
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.num {
+  top: 12400px
+}
+
+.infoWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(242, 242, 242, 0.7);
+  border-radius: 10px;
+  width: 40%;
+  height: 690px;
+}
+
+.pokeImgInfo {
+  width: 130px;
+  margin: 30px 30px 10px;
+}
+
+.infoWindow h4 {
+  font-size: 18px;
+  margin: 0px 0px 20px;
+}
+
+.infoWindow p {
+  width: 80%;
+  margin: 0px 0px 20px;
+  font-size: 18px;
+}
+
+.infoWindow table {
+  width: 80%;
+  margin: 0px 0px 20px;
+}
+
+@media (max-width: 768px) {
+  header label {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    background-color: #378B7D;
+    background: linear-gradient(to right, #639d25, #427768);
+    width: 40%;
+    margin-left: -40%;
+    transition: all 0.5s;
+    z-index: 1;
+  }
+
+  .menu ul {
+    flex-direction: column;
+  }
+
+  .menu li {
+    border-top: 1px solid rgba(245, 245, 245, 0.6);
+  }
+
+  #btnMenu:checked~.menu {
+    margin: 0;
+  }
+
+  .type {
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .type::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subMenu li {
+    padding: 8px 0px;
+  }
+
+  .menu li i {
+    position: absolute;
+    right: 20px;
+  }
+
+  .searchBox {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #554f4f;
+    box-sizing: border-box;
+    border-radius: 30px;
+    /* background: linear-gradient(to right, #24CCAA, #A2DB95); */
+    box-shadow: 0px 4px 12px rgba(136, 18, 56, 0.15);
+    cursor: pointer;
+    transition: 250ms ease;
+    margin: 6px;
+  }
+
+  .searchBox input {
+    padding: 7px 0px 6px 4px;
+    font-size: 15px;
+    color: rgb(56, 49, 49);
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    font-family: Roboto, sans-serif;
+    left: 27px;
+    width: 120px;
+    height: 18px;
+    top: 0;
+    transition: 250ms ease;
+    width: 0px;
+  }
+
+  .searchBox:hover {
+    background: linear-gradient(to right, #24CCAA, #A2DB95);
+    box-shadow: 0px 4px 12px rgba(168, 31, 74, 0.2);
+    border-radius: 30px;
+  }
+
+  .searchBox i {
+    position: absolute;
+    top: 26%;
+    left: 8px;
+    font-size: 16px;
+    color: rgb(56, 49, 49);
+    transition: 250ms ease;
+    transform: rotateY(-50%);
+  }
+
+  .searchBox-opened {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid #554f4f !important;
+    box-sizing: border-box !important;
+    border-radius: 30px !important;
+    /* background: linear-gradient(to right, #24CCAA, #A2DB95) !important; */
+    box-shadow: 0px 4px 12px rgba(168, 31, 74, 0.2) !important;
+    width: 160px !important;
+  }
+
+  .searchBox-opened input {
+    width: 120px;
+  }
+
+  .searchBox-opened i {
+    top: 28%;
+    left: 10px;
+    font-size: 14px;
+    transform: rotateY(-50%);
+  }
+
+  ::placeholder {
+    font-family: Dosis, sans-serif;
+  }
+
+
+  /* .searchIcon {
+    position: absolute;
+    top: 32%;
+    left: 52%;
+    font-size: 16px;
+  }
+
+  .search {
+    width: 39%;
+    height: 30px;
+    position: absolute;
+    margin: 0;
+    top: 19%;
+    left: 59.3%;
+    font-size: 15px;
+  } */
+
+  .logoSlogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12%;
+  }
+
+  .logoSlogan img {
+    width: 25%;
+    margin: 4% 0% 0%;
+  }
+
+  .logoSlogan h1 {
+    font-size: 16px;
+    margin: 4% 0%;
+  }
+
+  .container {
+    height: 140px;
+    width: 124px;
+    -webkit-perspective: 700;
+    margin: 4%;
+  }
+
+  .pokeImgName {
+    background-color: #F2F2F2;
+    width: 124px;
+    height: 110px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+  .pokeImg {
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+  }
+
+  .pokeName {
+    font-size: 14px;
+  }
+
+  .pokeInfo {
+    width: 114px;
+    font-size: 14px;
+  }
+
+  .footerStyle {
+    background-color: #378B7D;
+    background: linear-gradient(to right, #639d25, #427768);
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .rrss {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rrssLogo {
+    color: #F5F5F5;
+    font-size: 30px;
+  }
+
+  .GeneralInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .GeneralInformation>a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #F5F5F5;
+  }
+
+  .copyright {
+    width: auto;
+  }
+
+  .authors {
+    font-size: 12px;
+    color: #F5F5F5;
+  }
+
+}
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu ul li:hover ul.hide {
+    display: block !important;
+    position: absolute;
+  }
+
+  .menu>ul>li {
+    width: 114px;
+  }
+
+  .subMenu li {
+    padding: 15px;
+    width: 84px;
+  }
+}
