@@ -396,10 +396,11 @@ header label:hover {
   flex-direction: column;
   align-items: center;
   margin: auto;
+  margin: 90px 0px;
 }
 
 .num {
-  top: 12400px
+  top: 4880px
 }
 
 .infoWindow {
