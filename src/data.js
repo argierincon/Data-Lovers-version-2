@@ -28,7 +28,6 @@ export const showCards = (arrPkm) => {
             <p><span>Max-CP: </span>${element.stats['max-cp']}</p>
             <p><span>Huída: </span>${(element.encounter['base-flee-rate'] * 100).toFixed(2)}%</p>
             <p><span>Aparición: </span>${(element['spawn-chance'] * 100).toFixed(2)}%</p>
-            <div class="btnContainer"><button class="btnMore">+</button></div>
           </div>
         </div>
       </section>
