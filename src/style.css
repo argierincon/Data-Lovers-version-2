@@ -311,7 +311,6 @@ header label:hover {
 }
 
 .pokeInfo {
-  /* background: linear-gradient(180deg, #6A81F8 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #61CEE5 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 100%), #50EA56; */
   background-image: url(./img/back-card.png);
   width: 134px;
   height: 130px;
@@ -320,13 +319,30 @@ header label:hover {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 15px;
-  padding-top: 20px;
+  padding-top: 14px;
   padding-left: 10px;
   color: white;
 }
 
 .pokeInfo p span {
   font-weight: bold;
+}
+
+.btnContainer {
+  width: 90%;
+  margin-top: 2px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnMore {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  background: linear-gradient(to right, #24CCAA, #A2DB95);
 }
 
 .errorMessage {

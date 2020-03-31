@@ -9,6 +9,7 @@ import {
   alphaOrderZA,
   filterRegion,
   searchPkm,
+  filterPkmType,
 } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
@@ -29,7 +30,7 @@ iconSearch.addEventListener('click', () => {
 });
 
 // FUNCIÓN QUE MUESTRA A LOS POKEMON
-const dataContainer = document.getElementById('dataContainer');
+const dataContainer = document.querySelector('#dataContainer');
 dataContainer.innerHTML = showCards(data.pokemon);
 
 const az = document.getElementById('orderAZ');
@@ -59,66 +60,53 @@ desMaxCP.addEventListener('click', () => {
   dataContainer.innerHTML = showCards(orderDesMaxCP(data.pokemon));
 });
 
+// FUNCIÓN QUE FILTRA POR TIPO
+const types = document.querySelectorAll('.type>li');
+types.forEach((li) => {
+  li.addEventListener('click', () => {
+    dataContainer.innerHTML = showCards(filterPkmType(data.pokemon, li.innerText.toLowerCase()));
+  });
+});
+
+/* Son 18 tipos de pokemons de manera que no sería optimo crear 18 ID's y llamarlos a los 18 con
+los getElementById, por eso utilizo el querySelectorAll para acceder a una clase que todos tengan
+en común y al igual que en css accedo a los elementos que quiero manipular dentro de esa clase
+(.type>li). Ahora bien el querySelectorAll me retorna un array con todos los elementos que necesito
+entonces yo quiero añadirle a cada elemento de ese array el evento click, por eso le aplico el
+forEach para que se "ejecute la función (añadir a cada <li> el evento click) una vez por cada
+elemento (<li>)". En los parámetros de la función de filtrado pongo el array de objetos de pokemon
+y el elemento HTML <li>.innerText para acceder al texto dentro de esa etiqueta
+(el tipo de pokemon seleccionado por el usuario). */
+
 // FUNCIONES QUE FILTRAN POR % DE HUÍDA
-const notInCapture = document.getElementById('notInCapture');
-const rateHigh = document.getElementById('high');
-const rateMedium = document.getElementById('medium');
-const rateLow = document.getElementById('low');
+const escape = document.querySelectorAll('.escape>li');
 
-notInCapture.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterFleeRate(data.pokemon, 'not in capture'));
-});
-
-rateHigh.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterFleeRate(data.pokemon, 'high'));
-});
-
-rateMedium.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterFleeRate(data.pokemon, 'medium'));
-});
-
-rateLow.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterFleeRate(data.pokemon, 'low'));
+escape.forEach((li) => {
+  li.addEventListener('click', () => {
+    dataContainer.innerHTML = showCards(filterFleeRate(data.pokemon, li.innerText.toLowerCase()));
+  });
 });
 
 // FUNCIÓN QUE FILTRA POR % APARICIÓN
-const nulo = document.getElementById('nulo');
-const spawnHigh = document.getElementById('highSpawn');
-const spawnMedium = document.getElementById('mediumSpawn');
-const spawnLow = document.getElementById('lowSpawn');
-
-nulo.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterSpawn(data.pokemon, 'nulo'));
+const capture = document.querySelectorAll('.spawn>li');
+capture.forEach((li) => {
+  li.addEventListener('click', () => {
+    dataContainer.innerHTML = showCards(filterSpawn(data.pokemon, li.innerText.toLowerCase()));
+  });
 });
 
-spawnHigh.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterSpawn(data.pokemon, 'high'));
-});
-
-spawnMedium.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterSpawn(data.pokemon, 'medium'));
-});
-
-spawnLow.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterSpawn(data.pokemon, 'low'));
-});
-
-const kanto = document.getElementById('kanto');
-
-kanto.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterRegion(data.pokemon, 'kanto'));
-});
-
-const jhoto = document.getElementById('jhoto');
-
-jhoto.addEventListener('click', () => {
-  dataContainer.innerHTML = showCards(filterRegion(data.pokemon, 'jhoto'));
+// FUNCIÓN DE FILTRO POR REGIÓN
+const region = document.querySelectorAll('.region>li');
+region.forEach((li) => {
+  li.addEventListener('click', () => {
+    dataContainer.innerHTML = showCards(filterRegion(data.pokemon, li.innerText.toLowerCase()));
+  });
 });
 
 const inputSearch = document.getElementById('searchPkm');
 inputSearch.addEventListener('keyup', () => {
   const pokeName = inputSearch.value.toLowerCase().trim();
-  dataContainer.innerHTML = showCards(searchPkm(data.pokemon, 'name', pokeName));
+  dataContainer.innerHTML = showCards(searchPkm(data.pokemon, pokeName));
   if (dataContainer.innerHTML !== data.pokemon.name.indexOF()) {
     dataContainer.innerHTML = `
     <section class="errorMessage">

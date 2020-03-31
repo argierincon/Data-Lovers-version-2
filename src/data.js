@@ -28,6 +28,7 @@ export const showCards = (arrPkm) => {
             <p><span>Max-CP: </span>${element.stats['max-cp']}</p>
             <p><span>Huída: </span>${(element.encounter['base-flee-rate'] * 100).toFixed(2)}%</p>
             <p><span>Aparición: </span>${(element['spawn-chance'] * 100).toFixed(2)}%</p>
+            <div class="btnContainer"><button class="btnMore">+</button></div>
           </div>
         </div>
       </section>
@@ -38,10 +39,17 @@ export const showCards = (arrPkm) => {
 };
 
 export const alphaOrderAZ = (arrPkm) => {
+  // la ordenación de sort no es estable, por eso se le agrega la función de comparación
   const orderAZ = arrPkm.sort((pkm1, pkm2) => {
-    if (pkm1.name < pkm2.name) return -1;
-    if (pkm1.name > pkm2.name) return 1;
-    return 0;
+    let order;
+    if (pkm1.name < pkm2.name) {
+      order = -1; // retorna a - z
+    } else if (pkm1.name > pkm2.name) {
+      order = 1; // retorna z - a
+    } else {
+      order = 0;
+    }
+    return order;
   });
   return orderAZ;
 };
@@ -67,17 +75,28 @@ export const orderDesMaxCP = (arrPkm) => {
   return arrMaxCP;
 };
 
+// FUNCIÓN QUE FILTRA POR TIPO
+export const filterPkmType = (arrPkm, pkmType) => {
+  const filterType = arrPkm.filter(elem => elem.type.includes(pkmType));
+  return filterType;
+};
+/* creo mi función para filtrar por tipo con los 2 parámetros con los que va a trabajar,
+luego le aplico el metodo filter al arr de pokemons. El parámetro ELEM es cada objeto del
+array de objetos de pkm punto la propiedad tipo que es a la que necesito acceder punto
+el método includes() para determinar si la propiedad tipo que es un array incluye el
+tipo seleccionado en el botón */
+
 // FUNCIÓN QUE FILTRA POR % DE HUÍDA
 export const filterFleeRate = (arrPkm, condition) => {
   let fleeRate = [];
   switch (condition) {
-    case 'high':
+    case 'alto':
       fleeRate = arrPkm.filter(pkm => parseFloat(pkm.encounter['base-flee-rate']) > 0.21 && parseFloat(pkm.encounter['base-flee-rate']) < 1.00);
       return fleeRate.sort(sortFleeRate);
-    case 'medium':
+    case 'medio':
       fleeRate = arrPkm.filter(pkm => parseFloat(pkm.encounter['base-flee-rate']) > 0.11 && parseFloat(pkm.encounter['base-flee-rate']) < 0.2);
       return fleeRate.sort(sortFleeRate);
-    case 'low':
+    case 'bajo':
       fleeRate = arrPkm.filter(pkm => parseFloat(pkm.encounter['base-flee-rate']) > 0.0 && parseFloat(pkm.encounter['base-flee-rate']) < 0.1);
       return fleeRate.sort(sortFleeRate);
     default:
@@ -86,16 +105,17 @@ export const filterFleeRate = (arrPkm, condition) => {
   }
 };
 
+// FUNCIÓN QUE FILTRA POR % DE APARICIÓN
 export const filterSpawn = (arrPkm, condition) => {
   let spawnChance = [];
   switch (condition) {
-    case 'high':
+    case 'alto':
       spawnChance = arrPkm.filter(pkm => parseFloat(pkm['spawn-chance']) > 5.10 && parseFloat(pkm['spawn-chance']) < 8.00);
       return spawnChance.sort(sortSpawnChance);
-    case 'medium':
+    case 'medio':
       spawnChance = arrPkm.filter(pkm => parseFloat(pkm['spawn-chance']) > 2.51 && parseFloat(pkm['spawn-chance']) < 5.00);
       return spawnChance.sort(sortSpawnChance);
-    case 'low':
+    case 'bajo':
       spawnChance = arrPkm.filter(pkm => parseFloat(pkm['spawn-chance']) > 0.00 && parseFloat(pkm['spawn-chance']) < 2.50);
       return spawnChance.sort(sortSpawnChance);
     default:
@@ -104,6 +124,7 @@ export const filterSpawn = (arrPkm, condition) => {
   }
 };
 
+// FUNCIÓN QUE FILTRA POR REGIÓN
 export const filterRegion = (arrPkm, condition) => {
   let region = [];
   switch (condition) {
@@ -116,7 +137,8 @@ export const filterRegion = (arrPkm, condition) => {
   }
 };
 
-export const searchPkm = (data, property, condition) => {
-  const inputSearch = data.filter(element => (element[property]).indexOf(condition) !== -1);
+// FUNCIÓN DEL BUSCADOR POR NOMBRE
+export const searchPkm = (arrPkm, pkmName) => {
+  const inputSearch = arrPkm.filter(elem => elem.name.indexOf(pkmName) !== -1);
   return inputSearch;
 };
