@@ -3,6 +3,31 @@
   font-family: dosis, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 18px;
+  /* Tamaño del scroll en vertical */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(138, 136, 136);
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(95, 94, 94);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
 .hide {
   display: none !important;
 }
@@ -104,13 +129,6 @@ header label:hover {
   border-top: none !important;
 }
 
-/* .menu ul ul {
-  display: none;
-}
-.menu li {
-  border-right: 1PX SOLID #F5F5F5;
-} */
-
 .menu li:hover {
   background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -126,15 +144,6 @@ header label:hover {
 .menu li i {
   margin-left: 10px;
 }
-
-/* IMPORTANTE
-.menu ul li:hover ul {
-  display: block;
-  position: absolute;
-}
-.menu ul li:hover ul {
-  display: none;
-} */
 
 .search:active {
   outline: none;
@@ -152,9 +161,7 @@ header label:hover {
   border: 2px solid #554f4f;
   box-sizing: border-box;
   border-radius: 30px;
-  /* background: linear-gradient(to right, #24CCAA, #A2DB95); */
   box-shadow: 0px 4px 12px rgba(136, 18, 56, 0.15);
-  /* border-radius: 6px; */
   cursor: pointer;
   transition: 250ms ease;
   margin: 7px;
@@ -569,24 +576,6 @@ header label:hover {
   ::placeholder {
     font-family: Dosis, sans-serif;
   }
-
-
-  /* .searchIcon {
-    position: absolute;
-    top: 32%;
-    left: 52%;
-    font-size: 16px;
-  }
-
-  .search {
-    width: 39%;
-    height: 30px;
-    position: absolute;
-    margin: 0;
-    top: 19%;
-    left: 59.3%;
-    font-size: 15px;
-  } */
 
   .logoSlogan {
     display: flex;
